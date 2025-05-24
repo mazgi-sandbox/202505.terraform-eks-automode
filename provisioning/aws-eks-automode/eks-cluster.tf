@@ -10,11 +10,8 @@ resource "aws_eks_cluster" "main" {
   bootstrap_self_managed_addons = false
 
   compute_config {
-    enabled = true
-    node_pools = [
-      "general-purpose",
-      "system",
-    ]
+    enabled       = true
+    node_pools    = ["general-purpose"]
     node_role_arn = aws_iam_role.eks-cluster-nodes.arn
   }
 
